@@ -186,6 +186,7 @@ public class Animales {
                     Animal.setVida(vidaA + vidaD);
                     System.out.println("El animal " + listaAnimales.get(i).getNombreCientifico() + " ha sido alimentado" +
                             "ahora tiene " + listaAnimales.get(i).getVida() + " de vida");
+                    eliminarAnimal();
                 } else {
                     System.out.println("El animal a devorar es mas fuerte que el animal a alimentar");
                 }
