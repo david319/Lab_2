@@ -8,8 +8,10 @@ public class Animales {
     public static Scanner leer = new Scanner(System.in);
 
     // Atributos
-    private static int vidaA; // Vida del animal a Alimentar
+    public static int vidaA; // Vida del animal a Alimentar
     public static int vidaD; // Vida del animal a Devorar
+    public static int posicionA; // Posición del animal a Alimentar
+    public static int posicionD; // Posición del animal a Devorar
     private static boolean verify = false;
     private static ArrayList<Animal> listaAnimales = new ArrayList<>();
 
@@ -151,6 +153,7 @@ public class Animales {
         for (int i = 0; i < listaAnimales.size(); i++) {
             if (i == opcion) {
                 vidaA = listaAnimales.get(i).getVida();
+                posicionA = i;
             } else {
                 System.out.println("El animal no existe");
             }
@@ -165,19 +168,21 @@ public class Animales {
         for (int i = 0; i < listaAnimales.size(); i++) {
             if (i == opcion2) {
                 vidaD = listaAnimales.get(i).getVida();
+                posicionD = i;
             }
         }
 
-        if (vidaA > vidaD) {
-            System.out.println("El animal a alimentar es más fuerte");
-
+        for(int i = 0; i < listaAnimales.size(); i++) {
+            if(vidaA > vidaD) {
+                if (i == posicionA) {
+                    Animal.setVida(vidaA + vidaD);
+                    System.out.println("El animal " + listaAnimales.get(i).getNombreCientifico() + " ha sido alimentado" +
+                            "ahora tiene " + listaAnimales.get(i).getVida() + " de vida");
+                } else {
+                    System.out.println("El animal a devorar es mas fuerte que el animal a alimentar");
+                }
+            }
         }
-
-
-
-
-
-
 
     }
 
