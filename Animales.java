@@ -95,7 +95,47 @@ public class Animales {
                 } else {
                     System.out.println("Opción inválida");
                 }
+            } else {
+                System.out.println("El animal no existe");
             }
         }
     }
+
+    public static void imprimirAnimales(){
+        System.out.println("""
+                Listar animales
+                1. Imprimir por posición de la lista
+                2. Imprimir lista completa
+                3. Imprimir por nombre científico
+                Seleccione una opción:""");
+        int opcion = leer.nextInt();
+        if (opcion == 1) {
+            System.out.println("Ingrese la posición del animal que desea imprimir");
+            System.out.println("Ingrese un numero del 0 al " + listaAnimales.size() + ":");
+            int posicion = leer.nextInt();
+            for (int i = 0; i < listaAnimales.size(); i++) {
+                if (i == posicion) {
+                    System.out.println(listaAnimales.get(i));
+                } else {
+                    System.out.println("El animal no existe");
+                }
+            }
+        } else if (opcion == 2) {
+            System.out.println("Lista completa de animales:");
+            for (Animal listaAnimale : listaAnimales) {
+                System.out.println(listaAnimale);
+            }
+        } else if (opcion == 3) {
+            System.out.println("Ingrese el nombre científico del animal que desea imprimir:");
+            String nombreCientifico = leer.next();
+            for (Animal listaAnimale : listaAnimales) {
+                if (listaAnimale.getNombreCientifico().equals(nombreCientifico)) {
+                    System.out.println(listaAnimale);
+                }
+            }
+        } else {
+            System.out.println("Nombre inválido");
+        }
+    }
+
 }
