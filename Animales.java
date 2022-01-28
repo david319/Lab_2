@@ -1,5 +1,6 @@
 package Semana_2;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -136,6 +137,28 @@ public class Animales {
         } else {
             System.out.println("Nombre inválido");
         }
+    }
+
+    public static void cadenaAlimenticia(){
+        System.out.println("Seleccione el animal que desea alimentar");
+        for (int i = 0; i < listaAnimales.size(); i++) {
+            System.out.println(i + ". " + listaAnimales.get(i).getNombreCientifico());
+            String animalAlimentar = listaAnimales.get(i).getNombreCientifico();
+        }
+        System.out.println("Ingrese un numero del 0 al " + listaAnimales.size() + ":");
+        int opcion = leer.nextInt();
+
+        if (opcion < listaAnimales.size()) {
+            System.out.println("Ingrese el animal que sera devorado");
+            for (int i = 0; i < listaAnimales.size(); i++) {
+                System.out.println(i + ". " + listaAnimales.get(i).getNombreCientifico());
+                String animalDevorado = String.valueOf(listaAnimales.get(i));
+            }
+            System.out.println("Ingrese un numero del 0 al " + listaAnimales.size() + ":");
+            int opcion2 = leer.nextInt();
+
+        }
+
     }
 
 }
