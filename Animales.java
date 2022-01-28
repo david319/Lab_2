@@ -8,6 +8,8 @@ public class Animales {
     public static Scanner leer = new Scanner(System.in);
 
     // Atributos
+    private static int vidaA; // Vida del animal a Alimentar
+    public static int vidaD; // Vida del animal a Devorar
     private static boolean verify = false;
     private static ArrayList<Animal> listaAnimales = new ArrayList<>();
 
@@ -143,21 +145,39 @@ public class Animales {
         System.out.println("Seleccione el animal que desea alimentar");
         for (int i = 0; i < listaAnimales.size(); i++) {
             System.out.println(i + ". " + listaAnimales.get(i).getNombreCientifico());
-            String animalAlimentar = listaAnimales.get(i).getNombreCientifico();
         }
         System.out.println("Ingrese un numero del 0 al " + listaAnimales.size() + ":");
         int opcion = leer.nextInt();
-
-        if (opcion < listaAnimales.size()) {
-            System.out.println("Ingrese el animal que sera devorado");
-            for (int i = 0; i < listaAnimales.size(); i++) {
-                System.out.println(i + ". " + listaAnimales.get(i).getNombreCientifico());
-                String animalDevorado = String.valueOf(listaAnimales.get(i));
+        for (int i = 0; i < listaAnimales.size(); i++) {
+            if (i == opcion) {
+                vidaA = listaAnimales.get(i).getVida();
+            } else {
+                System.out.println("El animal no existe");
             }
-            System.out.println("Ingrese un numero del 0 al " + listaAnimales.size() + ":");
-            int opcion2 = leer.nextInt();
+        }
+
+        System.out.println("Seleccione el animal a devorar");
+        for (int i = 0; i < listaAnimales.size(); i++) {
+            System.out.println(i + ". " + listaAnimales.get(i).getNombreCientifico());
+        }
+        System.out.println("Ingrese un numero del 0 al " + listaAnimales.size() + ":");
+        int opcion2 = leer.nextInt();
+        for (int i = 0; i < listaAnimales.size(); i++) {
+            if (i == opcion2) {
+                vidaD = listaAnimales.get(i).getVida();
+            }
+        }
+
+        if (vidaA > vidaD) {
+            System.out.println("El animal a alimentar es más fuerte");
 
         }
+
+
+
+
+
+
 
     }
 
