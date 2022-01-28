@@ -1,7 +1,6 @@
 package Semana_2;
 
 import static Semana_2.Animales.*;
-
 import java.util.Scanner;
 
 public class Lab2P2_LaraDavid_22141143 {
@@ -13,9 +12,12 @@ public class Lab2P2_LaraDavid_22141143 {
         // Declaración de variables
         int opcion;
 
+        // Inicio del programa
+        animalsDefect();
+
+        System.out.println("Bienvenido al programa  programa de registro de animales");
         do {
             System.out.println("""
-                    Bienvenido al programa  programa de registro de animales
                     1. Registrar animal
                     2. Editar animal
                     3. Imprimir lista de animales
@@ -45,10 +47,9 @@ public class Lab2P2_LaraDavid_22141143 {
                     System.out.println("Gracias por utilizar el programa!");
                     break;
                 default:
-                    System.out.println("Opción inválida");
+                    System.out.println("Opción inválida!");
                     break;
             }
         } while (opcion != 5);
     }
-
 }
