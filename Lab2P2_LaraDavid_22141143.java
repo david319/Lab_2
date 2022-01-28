@@ -27,6 +27,7 @@ public class Lab2P2_LaraDavid_22141143 {
                 case 1:
                     System.out.println("Ingrese el nombre científico del animal:");
                     String nombre = leer.next();
+                    verify(nombre);
                     registerAnimal(nombre);
                     break;
                 case 2:

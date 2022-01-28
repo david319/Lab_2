@@ -19,6 +19,7 @@ public class Animales {
         for (int i = 0; i < listaAnimales.size(); i++) {
             if (listaAnimales.get(i).getNombreCientifico().equals(nombreCientifico)) {
                 verify = true;
+                break;
             }
         }
     }
@@ -36,6 +37,7 @@ public class Animales {
             System.out.println("Ingrese la vida del animal:");
             int vida = leer.nextInt();
             Animal animal = new Animal(nombreCientifico, nombreComun, habitad, alimentacion, rasgos, vida);
+            listaAnimales.add(animal);
         } else {
             System.out.println("El animal ya existe");
         }
