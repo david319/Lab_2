@@ -1,6 +1,5 @@
 package Semana_2;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -36,13 +35,13 @@ public class Animales {
             String rasgos = leer.nextLine();
             System.out.println("Ingrese la vida del animal:");
             int vida = leer.nextInt();
-            Animal animal = new Animal(nombreCientifico,nombreComun, habitad, alimentacion, rasgos, vida);
+            Animal animal = new Animal(nombreCientifico, nombreComun, habitad, alimentacion, rasgos, vida);
         } else {
             System.out.println("El animal ya existe");
         }
     }
 
-    public static void editAnimal(String nombreCientifico){
+    public static void editAnimal(String nombreCientifico) {
         for (int i = 0; i < listaAnimales.size(); i++) {
             if (listaAnimales.get(i).getNombreCientifico().equals(nombreCientifico)) {
                 System.out.println("""
@@ -106,7 +105,7 @@ public class Animales {
         }
     }
 
-    public static void imprimirAnimales(){
+    public static void imprimirAnimales() {
         System.out.println("""
                 Listar animales
                 1. Imprimir por posición de la lista
@@ -143,7 +142,7 @@ public class Animales {
         }
     }
 
-    public static void eliminarAnimal(){
+    public static void eliminarAnimal() {
         for (int i = 0; i < listaAnimales.size(); i++) {
             if (listaAnimales.get(i).getVida() <= 0) {
                 listaAnimales.remove(i);
@@ -151,7 +150,7 @@ public class Animales {
         }
     }
 
-    public static void cadenaAlimenticia(){
+    public static void cadenaAlimenticia() {
         System.out.println("Seleccione el animal que desea alimentar");
         for (int i = 0; i < listaAnimales.size(); i++) {
             System.out.println(i + ". " + listaAnimales.get(i).getNombreCientifico());
@@ -180,8 +179,8 @@ public class Animales {
             }
         }
 
-        for(int i = 0; i < listaAnimales.size(); i++) {
-            if(vidaA > vidaD) {
+        for (int i = 0; i < listaAnimales.size(); i++) {
+            if (vidaA > vidaD) {
                 if (i == posicionA) {
                     Animal.setVida(vidaA + vidaD);
                     System.out.println("El animal " + listaAnimales.get(i).getNombreCientifico() + " ha sido alimentado" +
@@ -192,7 +191,5 @@ public class Animales {
                 }
             }
         }
-
     }
-
 }
